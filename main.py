@@ -30,7 +30,8 @@ def home():
       VisitorTeamName = request.form.get("vname") # find user input
       HomeTeamName = request.form.get("hname") # find user input
       prediction = model.classify(VisitorTeamName, HomeTeamName)
-        
+
+      # Output the winning team instead of binary value
       if prediction == 1:
         winner = HomeTeamName
       elif prediction == 0:
